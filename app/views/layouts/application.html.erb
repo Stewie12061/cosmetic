@@ -10,7 +10,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= controller.controller_name %>" data-controller='main'>
+    <%= render 'layouts/partials/navbar/index' %>
+    
     <%= yield %>
+
+    <% if content_for? :use_svg %>
+      <%= render "layouts/partials/svg/#{yield(:use_svg)}" %>
+    <% end %>
   </body>
 </html>
