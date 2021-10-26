@@ -41,3 +41,8 @@ en :
     auth:
       signin: sign in
       signup: sign up
+      settings: setting
+      profile: profile
+      signout: sign out
+    confirm:
+      signout: Are you sure?

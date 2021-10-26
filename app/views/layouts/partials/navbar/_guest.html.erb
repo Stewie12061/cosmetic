@@ -1,5 +1,2 @@
-<ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-  <% guest_menu.each do |menu| %>
-    <%= render partial: 'layouts/partials/navbar/item', locals: { title: menu } %>
-  <% end %>
-</ul>
+<%= render partial: 'layouts/partials/navbar/menu_item', locals: { menus: guest_menu } %>
+

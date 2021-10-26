@@ -1,0 +1,21 @@
+.dropdown {
+  &.user-navbar {
+    margin-top: 8px;
+    .dropdown-toggle {
+      img {
+        width: 40px;
+        height: 40px;
+      }
+      &:after {
+        color: #fff;
+      }
+    }
+    ul {
+      margin-top: 21px !important;
+    }
+  }
+}
+
+.dropdown-toggle {
+  outline: 0;
+}

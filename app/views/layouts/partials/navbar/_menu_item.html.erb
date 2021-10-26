@@ -1,0 +1,9 @@
+<ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+  <% menus.each do |menu| %>
+    <%= render partial: 'layouts/partials/navbar/item', locals: { title: menu } %>
+  <% end %>
+
+  <% if local_assigns[:authencation] %>
+    <%= render 'layouts/partials/navbar/profile' %>
+  <% end %>
+</ul>
