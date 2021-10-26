@@ -3,5 +3,11 @@
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" id='toolbar'>
       <%= link_to t('navbar.brand'), root_path, class: "d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none navbar-brand text-capitalize"%>
     </div>
+
+    <% if user_signed_in? %>
+      <%= render 'layout/partials/navbar/authencation' %>
+    <% else %>
+      <%= render 'layout/partials/navbar/guest' %>
+    <% end %>
   </div>
 </div>
