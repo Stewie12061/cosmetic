@@ -1,0 +1,68 @@
+#goTop {
+  position: fixed;
+  bottom: 150px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 2.1em;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  cursor: pointer;
+  &:hover {
+    width: 52px;
+    height: 52px;
+  }
+  transition-duration: 3s;
+  transform: translateX(150vw);
+  &.showGoTop {
+    transform: translateX(95vw);
+  }
+}
+
+#topBar {
+  transition-duration: 3s;
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  &.fixed-topbar {
+    position: fixed !important;
+    animation: gotoTop 1s;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  &.unfixed-topbar {
+    position: fixed !important;
+    animation: gotoTop2 1s;
+    top: -100px;
+    width: 100%;
+    z-index: 999;
+  }
+  #toolbar {
+    height: 64.39px;
+    min-height: 64.39px;
+    max-height: 64.39px;
+  }
+}
+
+@keyframes gotoTop {
+  0% {
+    top: -100px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes gotoTop2 {
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: -100px;
+  }
+}

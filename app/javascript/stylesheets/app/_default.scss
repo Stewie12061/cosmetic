@@ -1,0 +1,45 @@
+body {
+  overflow-x: hidden;
+  background-color: var(--bs-body-bg);
+  padding-top: 80px;
+}
+
+.w-25 {
+  width: 25% !important;
+}
+
+.search {
+  &.rounded-start {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+  &.rounded-end {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle {
+  outline: 0;
+}
+
+.bg-green {
+  border-color: #79A70A;
+  border-color: linear-gradient(#9BC90D 0%, #79A70A 100%);
+  background: #79A70A;
+  background: linear-gradient(#9BC90D 0%, #79A70A 100%);  
+}
+
+.more {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@import './top';
+@import './svg';
+@import './scrollbar';
