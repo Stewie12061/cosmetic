@@ -1,0 +1,10 @@
+vi :
+  navbar:
+    brand: Cửa hàng mỹ phẩm
+    menus:
+      home: bảng điều khiển
+      products: sản phẩm
+      orders: đặt hàng
+    auth:
+      signin: đăng nhập
+      signup: đăng ký

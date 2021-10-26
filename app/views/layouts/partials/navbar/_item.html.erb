@@ -1,0 +1,8 @@
+<li>
+  <%= link_to map_path(title), class: "nav-link #{color_active_class(title)} text-capitalize" do %>
+    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+      <use xlink:href="#<%= title %>"/>
+    </svg>
+    <%= t("navbar.menus.#{title}") %>
+  <% end %>
+</li>

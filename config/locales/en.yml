@@ -29,5 +29,13 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+en :
+  navbar:
+    brand: Store cosmetics
+    menus:
+      home: dashboard
+      products: products
+      orders: orders
+    auth:
+      signin: sign in
+      signup: sign up
