@@ -4,12 +4,14 @@ module ApplicationHelper
   end
 
   def guest_menu
-    [:home, :products]
+    [:home, :products, :signup, :signin]
   end
 
   def map_path(path)
     #[paths.uniq, [root_path, products_path, orders_path]].transpose.to_h
-    {home: root_path, products: products_path, orders: orders_path} [path.to_sym]
+    {home: root_path, products: products_path, orders: orders_path,
+     signup: new_user_registration_path, signin: new_user_session_path 
+    } [path.to_sym]
   end
 
   def color_active_class(path)

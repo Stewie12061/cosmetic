@@ -5,6 +5,8 @@ vi :
       home: bảng điều khiển
       products: sản phẩm
       orders: đặt hàng
+      signin: đăng nhập
+      signup: đăng ký
     auth:
       signin: đăng nhập
       signup: đăng ký

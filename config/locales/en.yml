@@ -36,6 +36,8 @@ en :
       home: dashboard
       products: products
       orders: orders
+      signin: sign in
+      signup: sign up
     auth:
       signin: sign in
       signup: sign up
