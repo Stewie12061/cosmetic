@@ -9,13 +9,18 @@ module ApplicationHelper
 
   def map_path(path)
     #[paths.uniq, [root_path, products_path, orders_path]].transpose.to_h
-    {home: root_path, products: products_path, orders: orders_path,
-     signup: new_user_registration_path, signin: new_user_session_path 
+    {
+      home: root_path, 
+      products: products_path, 
+      orders: orders_path,
+      signup: new_user_registration_path, 
+      signin: new_user_session_path 
     } [path.to_sym]
   end
 
   def color_active_class(path)
-    is_active?(path) ? 'text-secondary' : 'text-white'
+    #is_active?(path) ? 'text-secondary' : 'text-white'
+    class_names({'text-secondary': is_active?(path), 'text-white': !is_active?(path)})
   end
 
   def is_active?(path)
