@@ -23,9 +23,9 @@ def create_product(row, category)
 end
 
 def add_images(product, url)
-  p "- Add image for product #{product.name}"
+  p "- Add image for product [#{product.name}]"
   url.strip!
-  product.images.add_attach(
+  product.images.attach(
     io:URI.parse(url).open,
     filename: File.basename(url)
   )

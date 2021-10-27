@@ -21,4 +21,24 @@
 class Product < ApplicationRecord
   has_many_attached :images
   belongs_to :category
+  scope :by_limit, -> (size=50) {includes(:category).limit(size)}
+
+  def attach_url(index = 0)
+    return nil unless self.images.attached?
+    len = self.images.length - 1
+    image = self.images[index > len ? len :  index]
+    return nil unless image.present?
+    is_storage_from_disk? ? storage_local_path(image.key) : storage_public_path(image.key)
+  end
+
+  def thumbnail
+    return nil unless self.images.attached?
+    image = self.images.first
+    image.variable? ? image.variant(resize: '200x200') : image
+    # is_storage_from_disk? ? storage_local_path(image.key) : storage_public_path(image.key)
+  end
+
+  def category_name
+    self.category.name.gsub(/\-/, ' ')
+  end
 end
