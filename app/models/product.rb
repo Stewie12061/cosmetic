@@ -6,6 +6,8 @@
 #  description :text
 #  name        :string
 #  price       :decimal(8, 2)
+#  quantitly   :integer          default(0)
+#  status      :integer          default(0)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  category_id :bigint           not null
@@ -19,8 +21,16 @@
 #  fk_rails_...  (category_id => categories.id)
 #
 class Product < ApplicationRecord
+  # extend ProductHelper
+
   has_many_attached :images
   belongs_to :category
+
+  enum status: [     
+    :newly, :normally, :close_date, 
+    :out_of_stocks, :stop_producing, :waiting_price 
+  ]
+
   scope :by_limit, -> (size=50) {includes(:category).limit(size)}
 
   def attach_url(index = 0)
@@ -40,5 +50,44 @@ class Product < ApplicationRecord
 
   def category_name
     self.category.name.gsub(/\-/, ' ')
+  end
+
+  
+
+  def ribbon
+    return new_product if self.newly?    
+  end
+
+  private
+  def new_product?
+    self.created_at + 7.days <= Time.zone.now
+  end
+
+
+  def popular
+    ribbon_tag 'popular', :left
+  end
+
+  def promotion
+    ribbon_tag 'promotion'
+  end
+
+  def new_product
+    ribbon_tag 'new', :left
+  end
+
+  def favourites
+    ['far fa-heart', 'fas fa-cart-plus']
+  end
+
+  def ribbon_tag(name, position=:right)
+    cls = 'ribbon-left' if position == :left
+    %Q(
+      <div class="ribbon text-uppercase #{cls}">
+        <span>
+          S/p mới
+        </span>
+      </div>
+    ).html_safe
   end
 end

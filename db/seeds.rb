@@ -13,17 +13,17 @@ def new_record?(row)
 end
 
 def create_product(row, category)
-  p "Create product #{row['name']}"
+  puts "Create product #{row['name']}"
   Product.create(
     name: row['name'].downcase,
     description: row['description'].downcase,
-    price: row['price'],
+    price: row['price'].to_f/1000.0,
     category_id: category.id
   )
 end
 
 def add_images(product, url)
-  p "- Add image for product [#{product.name}]"
+  puts "- Add image for product [#{product.name}]"
   url.strip!
   product.images.attach(
     io:URI.parse(url).open,

@@ -20,5 +20,6 @@ module Cosmetics
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.default_locale = :vi
     config.i18n.available_locales = [:en, :vi]
+    config.autoload_paths += %W(#{Rails.root}/app/decorators)
   end
 end

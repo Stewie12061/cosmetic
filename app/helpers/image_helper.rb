@@ -4,7 +4,7 @@ module ImageHelper
   end
 
   def default_image
-    asset_pack_path 'media/images/mm.png'
+    asset_pack_path 'media/images/cs.png'
   end
 
   def lozad_class(image)
