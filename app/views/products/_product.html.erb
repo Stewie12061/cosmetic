@@ -1,0 +1,29 @@
+<%= turbo_frame_tag dom_id(product), loading: :lazy do %>
+  <div class='d-inline-flex card product me-1 mb-3'>
+    <%= product.ribbon %>
+
+    <div class='card-header'>
+      <div class='product-image'>
+        <div class='thumbnail lozad' <%=lozad_class(product.thumbnail)%>>
+        </div>
+      </div>
+      <%= render 'products/favourite' %>
+    </div>
+
+    <div class='card-body'>
+      <div class='text-capitalize fs-6 more'>
+        <strong><%= product.name %></strong>
+      </div>
+      <div class='product-price d-flex flex-row-reverse fs-6'>
+        <%= currency(product.price) %>
+      </div>
+    </div>
+
+    <div class='card-footer'>
+      <div class='text-uppercase d-flex flex-row-reverse'>
+        <%= product.category_name %>
+      </div>
+    </div>
+    
+  </div>
+<% end %>
