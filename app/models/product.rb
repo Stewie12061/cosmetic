@@ -29,6 +29,7 @@ class Product < ApplicationRecord
   has_many :user_likes, foreign_key: 'product_id', class_name: 'Favourite', dependent: :delete_all
   has_many :product_ingredients, dependent: :destroy
   has_many :ingredients, through: :product_ingredients
+  has_many :recommendeds, dependent: :destroy
 
   enum status: [     
     :newly, :normally, :close_date, 
