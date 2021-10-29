@@ -69,3 +69,5 @@ gem "roo-xls", "~> 1.2"
 gem "active_decorator", "~> 1.4"
 
 gem "pagy", "~> 5.1"
+
+gem "devise-bootstrapped", "~> 0.1.1"
