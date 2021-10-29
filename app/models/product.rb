@@ -26,6 +26,7 @@ class Product < ApplicationRecord
   has_many_attached :images
   belongs_to :category
   has_many :benefits, dependent: :destroy
+  has_many :user_likes, foreign_key: 'product_id', class_name: 'Favourite', dependent: :delete_all
 
   enum status: [     
     :newly, :normally, :close_date, 
