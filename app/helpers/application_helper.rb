@@ -27,6 +27,10 @@ module ApplicationHelper
     paths.include?(path.to_sym) && request_name == path.to_sym
   end
 
+  def svg_id(title)
+    title.downcase.to_sym == :products ? 'svg-products' : title
+  end
+
   private
 
   def request_name
