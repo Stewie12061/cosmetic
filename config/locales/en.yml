@@ -52,4 +52,9 @@ en :
     new: new
   orders:
     price_contact: Contact
-
+  buttons:
+      login: đăng nhập
+      signup: đăng ký
+  headers:
+    login: log in
+    signup: sign up

@@ -21,3 +21,9 @@ vi :
     new: s/p mới
   orders:
     price_contact: liên hệ
+  buttons:
+    login: đăng nhập
+    signup: đăng ký
+  headers:
+    login: đăng nhập
+    signup: đăng ký
