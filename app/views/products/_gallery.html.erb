@@ -1,0 +1,8 @@
+<div class='product-images d-flex1' data-controller='gallery'>
+  <div class='gallery'>
+    <%= render partial: 'products/attachment', locals: { images: images, target: 'gallery', id: 'gallery' } %>
+  </div>
+  <div class='thumbnail'>
+    <%= render partial: 'products/attachment', locals: { images: images, target: 'thumbnail', id: 'gallery-thumbnail' } %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.item {
+  .product-main-inner {
+    .product-info {
+      width: 60%;
+      height: 500px;
+      padding: 0 0 0 7.1875rem;
+      .product-main__name-wrapper {
+        margin: 0 0 0.3125rem;
+        .product-main__name {
+          color: #000;
+          font: 500 2.25rem/2.375rem Locator,sans-serif;
+          text-transform: uppercase;
+          display: inline;
+          vertical-align: middle;          
+        }
+      }
+    }
+  }
+}

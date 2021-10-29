@@ -1,0 +1,15 @@
+<div class="splide" data-gallery-target=<%= target %> id=<%= id %>>
+  <div class="splide__track">
+		<ul class="splide__list">
+      <% images.each do |image| %>
+        <li class='splide__slide'>
+          <div class='splide__slide-content'>
+            <div class='thumbnail-image'>
+              <img <%=splide_lazy(image)%>/>
+            <div>
+          </div>
+        </li>
+      <% end %>
+		</ul>
+  </div>
+</div>

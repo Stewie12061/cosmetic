@@ -1,0 +1,24 @@
+.product-detail {
+  height: 70vh;
+  .nav-item {
+    .nav-link {
+      color: #4e4e4e !important;
+      width: 150px;
+      position: relative;
+      &.active {
+        color: #000 !important;
+        font-weight: 600;
+        background-color: transparent;
+        &:after {
+          content: ' ';
+          border-bottom: 1px solid red;
+          position: absolute;
+          width: 140px;
+          left: 50%;
+          margin-left: -70px;
+          bottom: -9px;
+        }
+      }
+    }
+  }
+}

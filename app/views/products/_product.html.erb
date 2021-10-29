@@ -1,4 +1,4 @@
-<%= turbo_frame_tag dom_id(product), target: '_top' do %>
+<%= turbo_frame_tag dom_id(product), target: '_top', data:{action: 'click->product#viewDetail', id: product.id} do %>
   <div class='d-inline-flex card product me-1 mb-3' data-main-target='main'>
     <%= ribbon(product) %>
 

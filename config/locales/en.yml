@@ -58,3 +58,13 @@ en :
   headers:
     login: log in
     signup: sign up
+  breadcrumb:
+    home: trang chủ
+    products: sản phẩm 
+  product:
+    detail:
+      description: mô tả 
+      recommended: khuyến khích
+      benefit: công dụng
+      ingredient: thành phần
+      how_to_use: hướng dẫn

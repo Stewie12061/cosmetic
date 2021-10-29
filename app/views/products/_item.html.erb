@@ -1,0 +1,6 @@
+<div class='products product item px-1'>
+  <div class='product-main-inner d-flex'>
+    <%= render partial: 'products/gallery', locals: { images: item.images } %>
+    <%= render partial: 'products/info', locals: { item: item } %>
+  </div>
+</div>
