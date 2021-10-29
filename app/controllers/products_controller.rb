@@ -1,9 +1,15 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  include Pagy::Backend
+  helper Pagy::Frontend
 
   # GET /products or /products.json
   def index
-    @products = Product.by_limit(100)
+    @pagy, @products = pagy Product.order(:created_at)
+    respond_to do |f|
+      f.turbo_stream
+      f.html
+    end
   end
 
   # GET /products/1 or /products/1.json

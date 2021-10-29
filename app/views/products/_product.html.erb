@@ -1,6 +1,6 @@
-<%= turbo_frame_tag dom_id(product), loading: :lazy do %>
-  <div class='d-inline-flex card product me-1 mb-3'>
-    <%= product.ribbon %>
+<%= turbo_frame_tag dom_id(product), target: '_top' do %>
+  <div class='d-inline-flex card product me-1 mb-3' data-main-target='main'>
+    <%= ribbon(product) %>
 
     <div class='card-header'>
       <div class='product-image'>

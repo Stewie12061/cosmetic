@@ -1,8 +1,29 @@
 import { Controller } from "@hotwired/stimulus"
-import lozad from "lozad"
 
 export default class extends Controller {
+  static targets = ['main']
+  static lozadLoaded = false
+
   connect() {
-    lozad().observe()
+  }
+
+  mainTargetConnected() {
+    if (!this.lozadLoaded) {
+      this.loadDefault()
+    }
+  }
+
+  mainTargetDisconnected() {
+    this.lozadLoaded = false
+  }
+
+  loadDefault() {
+    window.dispatchEvent(new Event('reload'))
+  }
+
+  disconnect() {
+  }
+
+  initialize() {
   }
 }

@@ -1,4 +1,8 @@
 module ProductsHelper
+  def ribbon(product)
+    return new_product if product.newly?    
+  end
+
   def popular
     ribbon_tag 'popular', :left
   end

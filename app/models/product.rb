@@ -33,6 +33,10 @@ class Product < ApplicationRecord
 
   scope :by_limit, -> (size=50) {includes(:category).limit(size)}
 
+  after_create_commit { broadcast_prepend_to "products" }
+  after_destroy_commit { broadcast_remove_to "products" }
+  after_update_commit { broadcast_replace_to "products" }
+
   def attach_url(index = 0)
     return nil unless self.images.attached?
     len = self.images.length - 1
@@ -52,42 +56,9 @@ class Product < ApplicationRecord
     self.category.name.gsub(/\-/, ' ')
   end
 
-  
-
-  def ribbon
-    return new_product if self.newly?    
-  end
-
   private
   def new_product?
     self.created_at + 7.days <= Time.zone.now
   end
 
-
-  def popular
-    ribbon_tag 'popular', :left
-  end
-
-  def promotion
-    ribbon_tag 'promotion'
-  end
-
-  def new_product
-    ribbon_tag 'new', :left
-  end
-
-  def favourites
-    ['far fa-heart', 'fas fa-cart-plus']
-  end
-
-  def ribbon_tag(name, position=:right)
-    cls = 'ribbon-left' if position == :left
-    %Q(
-      <div class="ribbon text-uppercase #{cls}">
-        <span>
-          S/p mới
-        </span>
-      </div>
-    ).html_safe
-  end
 end

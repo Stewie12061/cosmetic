@@ -13,5 +13,11 @@ vi :
       settings: cài đặt
       profile: hồ sơ
       signout: đăng xuất
-    confirm:
-      signout: Bạn muốn thoát?
+  confirm:
+    signout: Bạn muốn thoát?
+  ribbon:
+    popular: thông dụng
+    promotion: khuyến mãi
+    new: s/p mới
+  orders:
+    price_contact: liên hệ

@@ -1,0 +1,11 @@
+<turbo-stream action='append' target='products'>
+  <template>
+    <%= render partial: 'products/items', locals: {products: @products}, formats: [:html] %>
+  </template>
+</turbo-stream>
+
+<turbo-stream action='update' target='pagination'>
+  <template>
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </template>
+</turbo-stream>

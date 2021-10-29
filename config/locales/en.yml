@@ -44,5 +44,12 @@ en :
       settings: setting
       profile: profile
       signout: sign out
-    confirm:
-      signout: Are you sure?
+  confirm:
+    signout: Are you sure?
+  ribbon:
+    popular: popular
+    promotion: promotion
+    new: new
+  orders:
+    price_contact: Contact
+

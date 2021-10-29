@@ -19,3 +19,6 @@ const images = require.context("../images", true)
 import '../stylesheets/application.scss'
 
 import 'bootstrap'
+
+import * as EventService from '../services/event_service'
+EventService.start()
