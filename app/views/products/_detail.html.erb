@@ -1,0 +1,18 @@
+<div class='product-detail mt-4'>
+  <ul class="nav nav-pills mb-3 border-bottom border-secondary" id="pills-tab" role="tablist">
+    <% description_headers.each_with_index do |header, index| %>
+      <li class="nav-item mb-2" role="presentation">
+        <button class="nav-link text-uppercase <%= detail_active(index) %>" <%=tab_attributes(header) %> aria-selected="true">
+          <%= i18n_product(header) %>
+        </button>
+      </li>
+    <% end %>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <% description_headers.each_with_index do |header, index| %>
+      <div class="tab-pane fade show <%= detail_active(index) %>" id="detail-<%= header %>" role="tabpanel" aria-labelledby="tab-<%= header %>">
+        <%= item.description.humanize %>
+      </div>
+    <% end %>
+  </div>    
+</div>
