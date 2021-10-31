@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
   include Pagy::Backend
   helper Pagy::Frontend
+  add_breadcrumb I18n.t('breadcrumb.home'), :root_path
+  add_breadcrumb I18n.t('breadcrumb.products'), :products_path
 
   # GET /products or /products.json
   def index
@@ -14,6 +16,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1 or /products/1.json
   def show
+    add_breadcrumb @product.name, product_path(@product)
   end
 
   # GET /products/new

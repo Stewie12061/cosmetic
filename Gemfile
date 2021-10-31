@@ -73,3 +73,5 @@ gem "pagy", "~> 5.1"
 gem "devise-bootstrapped", "~> 0.1.1"
 
 gem "js-routes", "~> 2.1"
+
+gem "breadcrumbs_on_rails", "~> 4.1"

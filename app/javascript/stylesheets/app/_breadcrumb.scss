@@ -1,0 +1,20 @@
+.breadcrumb {
+  li {
+    margin-right: 5px;
+    margin-left: 5px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+        background-color: transparent;
+      }
+      font-weight: bold;
+    }
+  }
+}
