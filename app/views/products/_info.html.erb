@@ -5,4 +5,13 @@
   <p class='product-main__short-description first-letter-uppercase more3line'>
     <%= item.description.humanize %>
   </p>
+  <div class='product-price fs-1 text-success hl-60'>
+    <%= render partial: 'products/price', locals: {product: item, reverse: true } %>
+  </div>
+  <div class='product-main__control bottom-0 start-0'>
+    <div class='product-main__control_action d-flex'>
+      <%= render partial: 'products/stepper', locals: { quantity: 0 }%>
+      <%= render partial: 'products/add_to_cart', locals: { price: item.discount? ? item.discount : item.price }%>
+    </div>
+  </div>
 </div>

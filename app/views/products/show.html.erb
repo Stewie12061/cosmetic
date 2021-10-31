@@ -2,7 +2,7 @@
 
 <%= render 'shared/breadcrumb' %>
 
-<%= turbo_stream_from "products" %>
-<%= turbo_frame_tag "products" do %>
+<%= turbo_stream_from "show" %>
+<%= turbo_frame_tag "show" do %>
   <%= render partial: 'products/item', locals: {item: @product} %>
 <% end %>

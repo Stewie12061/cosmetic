@@ -1,7 +1,9 @@
-<div class='products product item px-1'>
-  <div class='product-main-inner d-flex'>
-    <%= render partial: 'products/gallery', locals: { images: item.images } %>
-    <%= render partial: 'products/info', locals: { item: item } %>
+<%= turbo_frame_tag "show-product-#{item.id}", target: '_top' do %>
+  <div class='products product item px-1'>
+    <div class='product-main-inner d-flex'>
+      <%= render partial: 'products/gallery', locals: { images: item.images } %>
+      <%= render partial: 'products/info', locals: { item: item } %>
+    </div>
+    <%= render partial: 'products/detail', locals: { item: item } %>
   </div>
-  <%= render partial: 'products/detail', locals: { item: item } %>
-</div>
+<% end%>

@@ -14,8 +14,8 @@
       <div class='text-capitalize fs-6 more'>
         <strong><%= product.name %></strong>
       </div>
-      <div class='product-price d-flex flex-row-reverse fs-6'>
-        <%= currency(product.price) %>
+      <div class='product-price d-flex flex-row-reverse fs-4 hl-36'>
+        <%= render partial: 'products/price', locals: {product: product} %>
       </div>
     </div>
 

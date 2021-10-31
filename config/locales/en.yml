@@ -68,3 +68,5 @@ en :
       benefit: công dụng
       ingredient: thành phần
       how_to_use: hướng dẫn
+  cart:
+    add_to_cart: add to cart

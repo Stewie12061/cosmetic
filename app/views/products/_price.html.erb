@@ -1,0 +1,10 @@
+<div class='d-flex flex-row-reverse text-success'>
+  <% if product.discount? %>
+    <%= currency(product.discount) %>
+    <div class='fs-6 text-secondary me-2 text-decoration-line-through'>
+      <%= currency(product.price) %>
+    </div>
+  <% else %>
+    <%= currency(product.price) %>
+  <% end %>
+</div>
